@@ -16,6 +16,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import org.testng.Assert;
+
+import com.automation.SeleniumFramework.Pages.CartPage;
+import com.automation.SeleniumFramework.Pages.CheckoutPage;
+import com.automation.SeleniumFramework.Pages.ConfirmationPage;
+import com.automation.SeleniumFramework.Pages.LoginPage;
+import com.automation.SeleniumFramework.Pages.ProductsPage;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class StandaloneTest {
@@ -33,31 +40,35 @@ public class StandaloneTest {
 		 driver.manage().window().maximize();
 		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		 driver.get("https://rahulshettyacademy.com/client");
-		 driver.findElement(By.id("userEmail")).sendKeys("rizor365@gmail.com");
-		 driver.findElement(By.id("userPassword")).sendKeys("Rizor123");
-		 driver.findElement(By.xpath("//input[@id='login']")).click();
-		 WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(5));
-		 wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".mb-3")));
-		 List<WebElement> products=driver.findElements(By.cssSelector(".mb-3"));
 		 
-		 WebElement selectedProduct=products.stream().filter(s->s.findElement(By.xpath(".//b")).getText().equals(productName)).findFirst().orElse(null);
-		selectedProduct.findElement(By.cssSelector(".card-body button:last-of-type")).click();
-		 wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#toast-container")));
-		 wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.cssSelector(".ng-animating"))));
-		 driver.findElement(By.cssSelector("button[routerlink*='cart']")).click();
+		 LoginPage loginPage=new LoginPage(driver);
+		 loginPage.goTo();
+		 ProductsPage productsPage= loginPage.LoginAction("rizor365@gmail.com", "Rizor123");
 		 
-		 List<WebElement> cartProducts=driver.findElements(By.xpath("//div[@class=\"cartSection\"]/h3"));
-		Boolean matchBoolean= cartProducts.stream().anyMatch(product->product.getText().equals(productName));
+
+		 List<WebElement> products=productsPage.getAllProducts();
+		 
+		 
+		 productsPage.addProductToCart(productName);
+		 //Thread.sleep(2000);
+		 productsPage.goToCartPage();
+		 
+		 
+		 CartPage cartPage=new CartPage(driver);
+		 Boolean matchBoolean= cartPage.verifyProductName(productName);
+		 
+		
 		Assert.assertTrue(matchBoolean);
-		driver.findElement(By.xpath("//li[@class='totalRow']/button")).click();
+		cartPage.goToCheckoutPage();
 		
-		Actions actions =new Actions(driver);
-		actions.sendKeys(driver.findElement(By.xpath("//input[@placeholder='Select Country']")),"India").build().perform();
+
+		CheckoutPage checkoutPage=new CheckoutPage(driver);
+		checkoutPage.selectCountry("India");
+		checkoutPage.Submit();
 		
-		driver.findElement(By.cssSelector(".ta-results button:nth-child(3)")).click();
-		driver.findElement(By.cssSelector(".action__submit")).click();
 		
-		String finalMessageString=driver.findElement(By.cssSelector(".hero-primary")).getText();
+		ConfirmationPage confirmationPage=new ConfirmationPage(driver);
+		String finalMessageString=confirmationPage.fetchText();
 		Assert.assertEquals(finalMessageString, "THANKYOU FOR THE ORDER.");
 		
 		
