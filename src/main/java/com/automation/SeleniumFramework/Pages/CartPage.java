@@ -30,8 +30,9 @@ public class CartPage extends Utility{
 		return  cartProducts.stream().anyMatch(product->product.getText().equals(productName));
 	}
 	
-	public void goToCheckoutPage() {
+	public CheckoutPage goToCheckoutPage() {
 		checkoutButton.click();
+		return new CheckoutPage(driver);
 	}
 	
 	

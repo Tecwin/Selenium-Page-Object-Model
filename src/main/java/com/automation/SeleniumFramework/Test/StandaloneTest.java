@@ -1,5 +1,6 @@
-package com.automation.SeleniumFramework;
+package com.automation.SeleniumFramework.Test;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
@@ -16,6 +17,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import com.automation.SeleniumFramework.Pages.CartPage;
 import com.automation.SeleniumFramework.Pages.CheckoutPage;
@@ -25,24 +27,14 @@ import com.automation.SeleniumFramework.Pages.ProductsPage;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class StandaloneTest {
+public class StandaloneTest extends BaseTest {
 
-	 public static void main(String []args) throws InterruptedException {
+	@Test
+	
+	 public void submitOrder() throws IOException, InterruptedException{
 		 
 		 //Rizor123 rizor365@gmail.com
 		 String productName="ADIDAS ORIGINAL";
-		 
-		 WebDriverManager.chromedriver().setup();
-		 
-		 ChromeOptions options=new ChromeOptions();
-		 options.addArguments("--disable-search-engine-choice-screen");
-		 WebDriver driver=new ChromeDriver(options);
-		 driver.manage().window().maximize();
-		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		 driver.get("https://rahulshettyacademy.com/client");
-		 
-		 LoginPage loginPage=new LoginPage(driver);
-		 loginPage.goTo();
 		 ProductsPage productsPage= loginPage.LoginAction("rizor365@gmail.com", "Rizor123");
 		 
 
@@ -50,19 +42,12 @@ public class StandaloneTest {
 		 
 		 
 		 productsPage.addProductToCart(productName);
-		 //Thread.sleep(2000);
-		 productsPage.goToCartPage();
-		 
-		 
-		 CartPage cartPage=new CartPage(driver);
-		 Boolean matchBoolean= cartPage.verifyProductName(productName);
-		 
-		
+		 Thread.sleep(2000);
+		  CartPage cartPage= productsPage.goToCartPage();
+		 Boolean matchBoolean= cartPage.verifyProductName(productName);		
 		Assert.assertTrue(matchBoolean);
-		cartPage.goToCheckoutPage();
+		CheckoutPage checkoutPage=  cartPage.goToCheckoutPage();
 		
-
-		CheckoutPage checkoutPage=new CheckoutPage(driver);
 		checkoutPage.selectCountry("India");
 		checkoutPage.Submit();
 		
@@ -70,11 +55,15 @@ public class StandaloneTest {
 		ConfirmationPage confirmationPage=new ConfirmationPage(driver);
 		String finalMessageString=confirmationPage.fetchText();
 		Assert.assertEquals(finalMessageString, "THANKYOU FOR THE ORDER.");
-		
-		
-		
-		
-		 driver.close();
+		 
 	 }
+	
+	@Test
+	public void loginFail() {
+		loginPage.LoginAction("rizor365@gmail.com", "Rizr123");
+		Assert.assertEquals("Incorrect email or password.", loginPage.getErrorMessage());
+		 
+		
+	}
 	
 }

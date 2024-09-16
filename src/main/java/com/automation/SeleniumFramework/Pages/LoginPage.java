@@ -6,11 +6,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+import com.automation.SeleniumFramework.Utility.Utility;
+
+public class LoginPage extends Utility{
 	WebDriver driver;
 	
 	public LoginPage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
+		super(driver);
 		this.driver=driver;
 		PageFactory.initElements( driver,this);
 	}
@@ -25,6 +28,9 @@ public class LoginPage {
 	@FindBy(xpath = "//input[@id='login']")
 	WebElement login;
 	
+	@FindBy(css="[class*='flyInOut']")
+	WebElement errorMessage;
+	
 	
 	 public ProductsPage LoginAction(String username,String secretkey) {
 		 
@@ -34,6 +40,11 @@ public class LoginPage {
 		 return new ProductsPage(driver);
 	 }
 	 
+	 public String getErrorMessage()
+	 {
+		 waitForElement(errorMessage);
+		 return errorMessage.getText();
+	 }
 	 public void goTo() {
 		 driver.get("https://rahulshettyacademy.com/client/");
 	 }
