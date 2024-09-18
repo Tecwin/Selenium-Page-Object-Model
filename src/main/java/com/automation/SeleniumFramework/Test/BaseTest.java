@@ -1,11 +1,16 @@
 package com.automation.SeleniumFramework.Test;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.security.PublicKey;
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Properties;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -14,6 +19,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
 import com.automation.SeleniumFramework.Pages.LoginPage;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -53,6 +60,15 @@ public class BaseTest {
 		 
 
 	}
+	
+	public List<HashMap<String, String>> jsonToHashMap(String fileName) throws IOException {
+		String jsonString=	FileUtils.readFileToString( new File(fileName),StandardCharsets.UTF_8);
+		
+		ObjectMapper mapper=new ObjectMapper();
+		List<HashMap<String, String>> list=mapper.readValue(jsonString, new TypeReference<List<HashMap<String,String>>>() {
+		});
+		return list;
+		}
 	
 	 @BeforeMethod(alwaysRun = true)
 	 public LoginPage launchApplication() throws IOException {

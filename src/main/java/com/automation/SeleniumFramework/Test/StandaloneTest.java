@@ -74,13 +74,15 @@ public class StandaloneTest extends BaseTest {
 	}
 	
 	@DataProvider
-	public Object[][] getData(){
+	public Object[][] getData() throws IOException{
 	//	return new Object[][]{{"rizor365@gmail.com","Rizor123","ADIDAS ORIGINAL"}}; this is correct , other way is using HashMap
-		HashMap<String, String> map=new HashMap<>();
-		map.put("email", "rizor365@gmail.com");
-		map.put("password", "Rizor123");
-		map.put("productName", "ADIDAS ORIGINAL");
-		return new Object[][]{{map}};
+		//HashMap<String, String> map=new HashMap<>();
+		//map.put("email", "rizor365@gmail.com");
+		//map.put("password", "Rizor123");
+		//map.put("productName", "ADIDAS ORIGINAL");
+		
+		List<HashMap<String, String>> data=jsonToHashMap(System.getProperty("user.dir")+"/src/main/java/com/automation/SeleniumFramework/Data/purchaseOrder.json");
+		return new Object[][]{{data.get(0)}};
 	}
 	
 }

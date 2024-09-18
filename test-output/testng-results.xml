@@ -2,21 +2,21 @@
 <testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-09-18T20:14:39Z" name="Suite" finished-at="2024-09-18T20:14:47Z" duration-ms="8494">
+  <suite started-at="2024-09-18T22:18:13Z" name="Suite" finished-at="2024-09-18T22:18:34Z" duration-ms="21691">
     <groups>
       <group name="purchase">
-        <method signature="StandaloneTest.submitOrder(java.util.HashMap)[pri:0, instance:com.automation.SeleniumFramework.Test.StandaloneTest@46cdf8bd]" name="submitOrder" class="com.automation.SeleniumFramework.Test.StandaloneTest"/>
+        <method signature="StandaloneTest.submitOrder(java.util.HashMap)[pri:0, instance:com.automation.SeleniumFramework.Test.StandaloneTest@7526515b]" name="submitOrder" class="com.automation.SeleniumFramework.Test.StandaloneTest"/>
       </group> <!-- purchase -->
     </groups>
-    <test started-at="2024-09-18T20:14:39Z" name="NegativeScenario" finished-at="2024-09-18T20:14:39Z" duration-ms="2">
+    <test started-at="2024-09-18T22:18:13Z" name="NegativeScenario" finished-at="2024-09-18T22:18:13Z" duration-ms="2">
     </test> <!-- NegativeScenario -->
-    <test started-at="2024-09-18T20:14:39Z" name="PositiveScenario" finished-at="2024-09-18T20:14:47Z" duration-ms="8494">
+    <test started-at="2024-09-18T22:18:13Z" name="PositiveScenario" finished-at="2024-09-18T22:18:34Z" duration-ms="21691">
       <class name="com.automation.SeleniumFramework.Test.StandaloneTest">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.automation.SeleniumFramework.Test.StandaloneTest@46cdf8bd]" started-at="2024-09-18T21:14:39Z" name="launchApplication" finished-at="2024-09-18T21:14:43Z" duration-ms="4336" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.automation.SeleniumFramework.Test.StandaloneTest@7526515b]" started-at="2024-09-18T23:18:13Z" name="launchApplication" finished-at="2024-09-18T23:18:17Z" duration-ms="4089" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:com.automation.SeleniumFramework.Test.StandaloneTest@46cdf8bd]" started-at="2024-09-18T21:14:43Z" name="submitOrder" data-provider="getData" finished-at="2024-09-18T21:14:47Z" duration-ms="4037" status="PASS">
+        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:com.automation.SeleniumFramework.Test.StandaloneTest@7526515b]" started-at="2024-09-18T23:18:17Z" name="submitOrder" data-provider="getData" finished-at="2024-09-18T23:18:34Z" duration-ms="17468" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -27,7 +27,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- submitOrder -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.automation.SeleniumFramework.Test.StandaloneTest@46cdf8bd]" started-at="2024-09-18T21:14:47Z" name="tearDown" finished-at="2024-09-18T21:14:47Z" duration-ms="114" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.automation.SeleniumFramework.Test.StandaloneTest@7526515b]" started-at="2024-09-18T23:18:34Z" name="tearDown" finished-at="2024-09-18T23:18:34Z" duration-ms="71" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

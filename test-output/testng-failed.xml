@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test name="Default test(failed)">
+<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test parallel="tests" name="PositiveScenario(failed)">
+    <groups>
+      <run>
+        <include name="purchase"/>
+      </run>
+    </groups>
     <classes>
       <class name="com.automation.SeleniumFramework.Test.StandaloneTest">
         <methods>
           <include name="submitOrder" invocation-numbers="0"/>
-          <include name="orderHistory"/>
           <include name="tearDown"/>
           <include name="launchApplication"/>
         </methods>
       </class> <!-- com.automation.SeleniumFramework.Test.StandaloneTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- PositiveScenario(failed) -->
+</suite> <!-- Failed suite [Suite] -->
