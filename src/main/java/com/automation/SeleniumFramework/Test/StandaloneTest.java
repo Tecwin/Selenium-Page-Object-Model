@@ -2,6 +2,7 @@ package com.automation.SeleniumFramework.Test;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.hc.core5.util.Asserts;
@@ -17,34 +18,38 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.automation.SeleniumFramework.Pages.CartPage;
 import com.automation.SeleniumFramework.Pages.CheckoutPage;
 import com.automation.SeleniumFramework.Pages.ConfirmationPage;
 import com.automation.SeleniumFramework.Pages.LoginPage;
+import com.automation.SeleniumFramework.Pages.OrderPage;
 import com.automation.SeleniumFramework.Pages.ProductsPage;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class StandaloneTest extends BaseTest {
-
-	@Test
 	
-	 public void submitOrder() throws IOException, InterruptedException{
-		 
+	String productName="ADIDAS ORIGINAL";
+
+	@Test(dataProvider = "getData",groups= {"purchase"})
+	
+	 public void submitOrder(HashMap<String ,String> map) throws IOException, InterruptedException{ 
+		 //when using just obect as data provider then we use String email,String password,String productName to retrieve individual values
 		 //Rizor123 rizor365@gmail.com
-		 String productName="ADIDAS ORIGINAL";
-		 ProductsPage productsPage= loginPage.LoginAction("rizor365@gmail.com", "Rizor123");
+		 
+		 ProductsPage productsPage= loginPage.LoginAction(map.get("email"), map.get("password"));
 		 
 
 		 List<WebElement> products=productsPage.getAllProducts();
 		 
 		 
-		 productsPage.addProductToCart(productName);
+		 productsPage.addProductToCart(map.get("productName"));
 		 Thread.sleep(2000);
 		  CartPage cartPage= productsPage.goToCartPage();
-		 Boolean matchBoolean= cartPage.verifyProductName(productName);		
+		 Boolean matchBoolean= cartPage.verifyProductName(map.get("productName"));		
 		Assert.assertTrue(matchBoolean);
 		CheckoutPage checkoutPage=  cartPage.goToCheckoutPage();
 		
@@ -58,12 +63,24 @@ public class StandaloneTest extends BaseTest {
 		 
 	 }
 	
-	@Test
-	public void loginFail() {
-		loginPage.LoginAction("rizor365@gmail.com", "Rizr123");
-		Assert.assertEquals("Incorrect email or password.", loginPage.getErrorMessage());
-		 
+	
+	@Test(dependsOnMethods = {"submitOrder"})
+	public void orderHistory() {
 		
+		ProductsPage productsPage= loginPage.LoginAction("rizor365@gmail.com", "Rizor123");
+		OrderPage orderPage= productsPage.goToOrdersPage();
+		Assert.assertTrue(orderPage.verifyOrderDisplay(productName)); 
+		
+	}
+	
+	@DataProvider
+	public Object[][] getData(){
+	//	return new Object[][]{{"rizor365@gmail.com","Rizor123","ADIDAS ORIGINAL"}}; this is correct , other way is using HashMap
+		HashMap<String, String> map=new HashMap<>();
+		map.put("email", "rizor365@gmail.com");
+		map.put("password", "Rizor123");
+		map.put("productName", "ADIDAS ORIGINAL");
+		return new Object[][]{{map}};
 	}
 	
 }

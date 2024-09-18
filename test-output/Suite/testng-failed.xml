@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test parallel="tests" name="NegativeScenario(failed)">
+    <groups>
+      <run>
+        <include name="negativeCases"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.automation.SeleniumFramework.Test.NegativeScenarios">
+        <methods>
+          <include name="loginFail"/>
+        </methods>
+      </class> <!-- com.automation.SeleniumFramework.Test.NegativeScenarios -->
+    </classes>
+  </test> <!-- NegativeScenario(failed) -->
+</suite> <!-- Failed suite [Suite] -->

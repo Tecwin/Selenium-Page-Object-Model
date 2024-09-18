@@ -35,7 +35,7 @@ public class NegativeScenarios extends BaseTest {
 		 
 	 }
 	
-	@Test
+	@Test(groups = "negativeCases")
 	public void loginFail() {
 		loginPage.LoginAction("rizor365@gmail.com", "Rizr123");
 		Assert.assertEquals("Incorrect email or password.", loginPage.getErrorMessage());

@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.automation.SeleniumFramework.Pages.CartPage;
+import com.automation.SeleniumFramework.Pages.OrderPage;
 
 public class Utility {
 	
@@ -27,6 +28,9 @@ public class Utility {
 
 	@FindBy(css="button[routerlink*='cart']")
 	WebElement cartButton;
+	
+	@FindBy(css="button[routerlink*='myorders']")
+	WebElement ordersTab;
 
 	
 	By cartButtonBy=By.cssSelector("button[routerlink*='cart']");
@@ -55,6 +59,11 @@ public class Utility {
 		return new CartPage(driver);
 	}
 	
+	public OrderPage goToOrdersPage() {
+		waitForElement(ordersTab);
+		ordersTab.click();
+		return new OrderPage(driver);
+	}
 	public void enterText(WebElement element,String text) {
 		Actions actions =new Actions(driver);
 		actions.sendKeys(element,text).build().perform();

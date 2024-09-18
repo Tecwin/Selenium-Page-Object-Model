@@ -1,0 +1,33 @@
+package com.automation.SeleniumFramework.Pages;
+
+import java.util.List;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.automation.SeleniumFramework.Utility.Utility;
+
+public class OrderPage extends Utility {
+	
+	public OrderPage(WebDriver driver) {
+		super(driver);
+		this.driver=driver;
+		PageFactory.initElements(driver, this);
+	}
+
+
+	public WebDriver driver;
+	
+	@FindBy(css="tr td:nth-child(3)")
+	List<WebElement> orderedProducts;
+	
+	
+	public Boolean verifyOrderDisplay(String productName) {
+		return  orderedProducts.stream().anyMatch(product->product.getText().equals(productName));
+	}
+	
+	
+
+}
