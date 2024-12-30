@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test parallel="tests" name="PositiveScenario(failed)">
-    <groups>
-      <run>
-        <include name="purchase"/>
-      </run>
-    </groups>
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.automation.SeleniumFramework.Utility.Listeners"/>
+  </listeners>
+  <test name="NegativeScenario(failed)">
     <classes>
       <class name="com.automation.SeleniumFramework.Test.StandaloneTest">
         <methods>
-          <include name="submitOrder" invocation-numbers="0"/>
           <include name="tearDown"/>
           <include name="launchApplication"/>
         </methods>
       </class> <!-- com.automation.SeleniumFramework.Test.StandaloneTest -->
+      <class name="com.automation.SeleniumFramework.Test.NegativeScenarios">
+        <methods>
+          <include name="loginFail"/>
+          <include name="tearDown"/>
+          <include name="launchApplication"/>
+        </methods>
+      </class> <!-- com.automation.SeleniumFramework.Test.NegativeScenarios -->
     </classes>
-  </test> <!-- PositiveScenario(failed) -->
+  </test> <!-- NegativeScenario(failed) -->
 </suite> <!-- Failed suite [Suite] -->

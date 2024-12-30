@@ -8,9 +8,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.automation.SeleniumFramework.Pages.CartPage;
-import com.automation.SeleniumFramework.Pages.CheckoutPage;
-import com.automation.SeleniumFramework.Pages.ConfirmationPage;
 import com.automation.SeleniumFramework.Pages.ProductsPage;
+import com.automation.SeleniumFramework.Utility.Retry;
 
 public class NegativeScenarios extends BaseTest {
 	
@@ -35,10 +34,10 @@ public class NegativeScenarios extends BaseTest {
 		 
 	 }
 	
-	@Test(groups = "negativeCases")
+	@Test(groups = "negativeCases",retryAnalyzer = Retry.class)
 	public void loginFail() {
 		loginPage.LoginAction("rizor365@gmail.com", "Rizr123");
-		Assert.assertEquals("Incorrect email or password.", loginPage.getErrorMessage());
+		Assert.assertEquals("Incorrect email or passwor.", loginPage.getErrorMessage());
 		 
 		
 	}

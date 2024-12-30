@@ -1,0 +1,13 @@
+/Users/tecwinrodrigues/eclipse-workspace/SeleniumFramework/src/main/java/com/automation/SeleniumFramework/Pages/CartPage.java
+/Users/tecwinrodrigues/eclipse-workspace/SeleniumFramework/src/main/java/com/automation/SeleniumFramework/Pages/CheckoutPage.java
+/Users/tecwinrodrigues/eclipse-workspace/SeleniumFramework/src/main/java/com/automation/SeleniumFramework/Pages/ConfirmationPage.java
+/Users/tecwinrodrigues/eclipse-workspace/SeleniumFramework/src/main/java/com/automation/SeleniumFramework/Pages/LoginPage.java
+/Users/tecwinrodrigues/eclipse-workspace/SeleniumFramework/src/main/java/com/automation/SeleniumFramework/Pages/OrderPage.java
+/Users/tecwinrodrigues/eclipse-workspace/SeleniumFramework/src/main/java/com/automation/SeleniumFramework/Pages/ProductsPage.java
+/Users/tecwinrodrigues/eclipse-workspace/SeleniumFramework/src/main/java/com/automation/SeleniumFramework/Test/BaseTest.java
+/Users/tecwinrodrigues/eclipse-workspace/SeleniumFramework/src/main/java/com/automation/SeleniumFramework/Test/NegativeScenarios.java
+/Users/tecwinrodrigues/eclipse-workspace/SeleniumFramework/src/main/java/com/automation/SeleniumFramework/Test/StandaloneTest.java
+/Users/tecwinrodrigues/eclipse-workspace/SeleniumFramework/src/main/java/com/automation/SeleniumFramework/Utility/ExtentReportNG.java
+/Users/tecwinrodrigues/eclipse-workspace/SeleniumFramework/src/main/java/com/automation/SeleniumFramework/Utility/Listeners.java
+/Users/tecwinrodrigues/eclipse-workspace/SeleniumFramework/src/main/java/com/automation/SeleniumFramework/Utility/Retry.java
+/Users/tecwinrodrigues/eclipse-workspace/SeleniumFramework/src/main/java/com/automation/SeleniumFramework/Utility/Utility.java

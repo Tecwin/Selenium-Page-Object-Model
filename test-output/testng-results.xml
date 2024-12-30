@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="3" failed="1" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-09-18T22:18:13Z" name="Suite" finished-at="2024-09-18T22:18:34Z" duration-ms="21691">
+  <suite started-at="2024-09-19T18:22:27Z" name="Suite" finished-at="2024-09-19T18:23:26Z" duration-ms="59249">
     <groups>
+      <group name="negativeCases">
+        <method signature="NegativeScenarios.loginFail()[pri:0, instance:com.automation.SeleniumFramework.Test.NegativeScenarios@7a1a14a4]" name="loginFail" class="com.automation.SeleniumFramework.Test.NegativeScenarios"/>
+      </group> <!-- negativeCases -->
       <group name="purchase">
-        <method signature="StandaloneTest.submitOrder(java.util.HashMap)[pri:0, instance:com.automation.SeleniumFramework.Test.StandaloneTest@7526515b]" name="submitOrder" class="com.automation.SeleniumFramework.Test.StandaloneTest"/>
+        <method signature="StandaloneTest.submitOrder(java.util.HashMap)[pri:0, instance:com.automation.SeleniumFramework.Test.StandaloneTest@4716be8b]" name="submitOrder" class="com.automation.SeleniumFramework.Test.StandaloneTest"/>
       </group> <!-- purchase -->
     </groups>
-    <test started-at="2024-09-18T22:18:13Z" name="NegativeScenario" finished-at="2024-09-18T22:18:13Z" duration-ms="2">
-    </test> <!-- NegativeScenario -->
-    <test started-at="2024-09-18T22:18:13Z" name="PositiveScenario" finished-at="2024-09-18T22:18:34Z" duration-ms="21691">
+    <test started-at="2024-09-19T18:22:27Z" name="PositiveScenario" finished-at="2024-09-19T18:22:46Z" duration-ms="18956">
       <class name="com.automation.SeleniumFramework.Test.StandaloneTest">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.automation.SeleniumFramework.Test.StandaloneTest@7526515b]" started-at="2024-09-18T23:18:13Z" name="launchApplication" finished-at="2024-09-18T23:18:17Z" duration-ms="4089" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.automation.SeleniumFramework.Test.StandaloneTest@4716be8b]" started-at="2024-09-19T19:22:27Z" name="launchApplication" finished-at="2024-09-19T19:22:33Z" duration-ms="6682" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:com.automation.SeleniumFramework.Test.StandaloneTest@7526515b]" started-at="2024-09-18T23:18:17Z" name="submitOrder" data-provider="getData" finished-at="2024-09-18T23:18:34Z" duration-ms="17468" status="PASS">
+        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:com.automation.SeleniumFramework.Test.StandaloneTest@4716be8b]" started-at="2024-09-19T19:22:33Z" name="submitOrder" data-provider="getData" finished-at="2024-09-19T19:22:38Z" duration-ms="4640" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -27,11 +28,145 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- submitOrder -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.automation.SeleniumFramework.Test.StandaloneTest@7526515b]" started-at="2024-09-18T23:18:34Z" name="tearDown" finished-at="2024-09-18T23:18:34Z" duration-ms="71" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.automation.SeleniumFramework.Test.StandaloneTest@4716be8b]" started-at="2024-09-19T19:22:38Z" name="tearDown" finished-at="2024-09-19T19:22:38Z" duration-ms="112" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.automation.SeleniumFramework.Test.StandaloneTest@4716be8b]" started-at="2024-09-19T19:22:38Z" name="launchApplication" finished-at="2024-09-19T19:22:45Z" duration-ms="6645" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="orderHistory()[pri:0, instance:com.automation.SeleniumFramework.Test.StandaloneTest@4716be8b]" started-at="2024-09-19T19:22:45Z" name="orderHistory" finished-at="2024-09-19T19:22:46Z" depends-on-methods="com.automation.SeleniumFramework.Test.StandaloneTest.submitOrder" duration-ms="693" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- orderHistory -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.automation.SeleniumFramework.Test.StandaloneTest@4716be8b]" started-at="2024-09-19T19:22:46Z" name="tearDown" finished-at="2024-09-19T19:22:46Z" duration-ms="112" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.automation.SeleniumFramework.Test.StandaloneTest -->
     </test> <!-- PositiveScenario -->
+    <test started-at="2024-09-19T18:22:46Z" name="NegativeScenario" finished-at="2024-09-19T18:23:26Z" duration-ms="40002">
+      <class name="com.automation.SeleniumFramework.Test.NegativeScenarios">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.automation.SeleniumFramework.Test.NegativeScenarios@7a1a14a4]" started-at="2024-09-19T19:22:46Z" name="launchApplication" finished-at="2024-09-19T19:22:56Z" duration-ms="10100" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="loginFail()[pri:0, instance:com.automation.SeleniumFramework.Test.NegativeScenarios@7a1a14a4]" started-at="2024-09-19T19:22:56Z" name="loginFail" finished-at="2024-09-19T19:22:57Z" duration-ms="960" status="SKIP">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [Incorrect email or password.] but found [Incorrect email or passwor.]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [Incorrect email or password.] but found [Incorrect email or passwor.]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
+	at org.testng.Assert.assertEquals(Assert.java:116)
+	at org.testng.Assert.assertEquals(Assert.java:190)
+	at org.testng.Assert.assertEquals(Assert.java:200)
+	at com.automation.SeleniumFramework.Test.NegativeScenarios.loginFail(NegativeScenarios.java:40)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginFail -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.automation.SeleniumFramework.Test.NegativeScenarios@7a1a14a4]" started-at="2024-09-19T19:22:57Z" name="tearDown" finished-at="2024-09-19T19:22:57Z" duration-ms="109" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.automation.SeleniumFramework.Test.NegativeScenarios@7a1a14a4]" started-at="2024-09-19T19:22:57Z" name="launchApplication" finished-at="2024-09-19T19:23:03Z" duration-ms="5651" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="loginFail()[pri:0, instance:com.automation.SeleniumFramework.Test.NegativeScenarios@7a1a14a4]" started-at="2024-09-19T19:23:03Z" name="loginFail" finished-at="2024-09-19T19:23:03Z" duration-ms="400" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [Incorrect email or password.] but found [Incorrect email or passwor.]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [Incorrect email or password.] but found [Incorrect email or passwor.]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
+	at org.testng.Assert.assertEquals(Assert.java:116)
+	at org.testng.Assert.assertEquals(Assert.java:190)
+	at org.testng.Assert.assertEquals(Assert.java:200)
+	at com.automation.SeleniumFramework.Test.NegativeScenarios.loginFail(NegativeScenarios.java:40)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginFail -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.automation.SeleniumFramework.Test.NegativeScenarios@7a1a14a4]" started-at="2024-09-19T19:23:04Z" name="tearDown" finished-at="2024-09-19T19:23:04Z" duration-ms="115" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.automation.SeleniumFramework.Test.NegativeScenarios@7a1a14a4]" started-at="2024-09-19T19:23:04Z" name="launchApplication" finished-at="2024-09-19T19:23:09Z" duration-ms="5736" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="validateProductNameIncart()[pri:0, instance:com.automation.SeleniumFramework.Test.NegativeScenarios@7a1a14a4]" started-at="2024-09-19T19:23:09Z" name="validateProductNameIncart" finished-at="2024-09-19T19:23:26Z" duration-ms="16507" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateProductNameIncart -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.automation.SeleniumFramework.Test.NegativeScenarios@7a1a14a4]" started-at="2024-09-19T19:23:26Z" name="tearDown" finished-at="2024-09-19T19:23:26Z" duration-ms="135" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.automation.SeleniumFramework.Test.NegativeScenarios -->
+    </test> <!-- NegativeScenario -->
   </suite> <!-- Suite -->
 </testng-results>

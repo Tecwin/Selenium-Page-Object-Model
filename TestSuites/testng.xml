@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite parallel="tests" name="Suite">
+<suite  name="Suite">
+ <listeners>
+ <listener class-name="com.automation.SeleniumFramework.Utility.Listeners"/>
+ </listeners>
   <test thread-count="5" name="PositiveScenario">
     <classes>
       <class name="com.automation.SeleniumFramework.Test.StandaloneTest"/>

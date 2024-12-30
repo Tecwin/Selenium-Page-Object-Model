@@ -1,13 +1,17 @@
 package com.automation.SeleniumFramework.Test;
 
+import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.hc.core5.util.Asserts;
 import org.openqa.selenium.By;
 import org.openqa.selenium.By.ByXPath;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -84,5 +88,6 @@ public class StandaloneTest extends BaseTest {
 		List<HashMap<String, String>> data=jsonToHashMap(System.getProperty("user.dir")+"/src/main/java/com/automation/SeleniumFramework/Data/purchaseOrder.json");
 		return new Object[][]{{data.get(0)}};
 	}
+
 	
 }
