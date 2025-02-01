@@ -7,6 +7,6 @@
 ->When executing the test cases it takes locators from page object classes and if page object needs any utility code it takes it from the utility classes through inheritence <br/>
 ->The configurations required to execute the test cases are set by the base class which is also inherited by the test class <br/>
 ->If data is needed the data is taken from data provider ( jsonTo HashMap) the conversion is done in Base test class <br/>
-->While test cases are being everything is being monitored by the listeners <br/>
+->While test cases are being executed everything is being monitored by the listeners <br/>
 ->The listeners inturn report everything to the extent Reports. 
 
